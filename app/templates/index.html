@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <h1>Fila de {{ params.fila }}</h1>
+    </body>
+
+    <table style="width:100%">
+        <tr>
+            {% for col in params.data.columns %}
+            <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+        {% for i, row in params.data.iterrows() %}
+        <tr>
+            {% for j in row %}
+            <td>{{ j }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table> 
+</html>
